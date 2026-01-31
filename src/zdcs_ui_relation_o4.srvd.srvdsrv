@@ -1,0 +1,11 @@
+@EndUserText.label: 'ZDCS_UI_RELATION_O4'
+@ObjectModel: {
+  leadingEntity: {
+    name: 'ZDCS_C_RELATION'
+  }
+}
+define service ZDCS_UI_RELATION_O4 {
+  expose ZDCS_C_RELATION;
+  expose ZDCS_I_RELATION_NAV;
+  expose ZDCS_I_RELATION_OTH;
+}

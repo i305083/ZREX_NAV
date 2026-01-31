@@ -1,0 +1,5 @@
+CLASS zbp_dcs_r_relation DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zdcs_r_relation.
+ENDCLASS.
+
+CLASS zbp_dcs_r_relation IMPLEMENTATION.
+ENDCLASS.

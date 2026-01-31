@@ -1,0 +1,83 @@
+@Metadata.layer: #CORE
+ 
+@UI.headerInfo: {
+  typeName: 'Position',
+  typeNamePlural: 'Positions',
+  title: {
+    type: #STANDARD,
+    value: 'PositionNumber'
+  },
+  description: {
+    type: #STANDARD,
+    value: 'PositionName'
+  },
+  typeImageUrl: 'sap-icon://employee'
+}
+annotate view ZDCS_I_RELATION_NAV with
+{
+
+  @UI.facet: [{
+    label: 'Navigation target Level 2',
+    id: 'GeneralInfo', 
+    position: 10 ,
+    type: #IDENTIFICATION_REFERENCE,
+      purpose: #STANDARD
+  },
+    {
+      type: #FIELDGROUP_REFERENCE,
+      label: 'Position Information',
+      targetQualifier: 'QuickViewData',
+      purpose: #QUICK_VIEW
+    }
+  ]
+  @UI.fieldGroup: [{
+    qualifier: 'QuickViewData',
+    position: 10,
+    importance: #HIGH,
+    label: 'Position Number',
+    type: #WITH_INTENT_BASED_NAVIGATION,
+    semanticObjectAction: 'display'
+  }]
+  @UI.identification: [ {
+   position: 10 ,
+   label: 'Position ID'
+ } ]
+  @UI.lineItem: [{
+    position: 10,
+    importance: #HIGH,
+    label: 'Position'
+  }]
+ 
+//  @Consumption.semanticObject: 'ZDCS_REL_OTH'
+  PositionNumber;
+  @UI.identification: [ {
+   position: 20 ,
+   label: 'Position Name'
+  } ]
+  @UI.fieldGroup: [{
+    qualifier: 'QuickViewData',
+    position: 20,
+    label: 'Position Name'
+  }]
+  PositionName;
+  @UI.identification: [ {
+   position: 30 ,
+   label: 'Position Type'
+  } ]
+  @UI.fieldGroup: [{
+    qualifier: 'QuickViewData',
+    position: 30,
+    label: 'Type'
+  }]
+  PositionType;
+  @UI.identification: [ {
+   position: 40 ,
+   label: 'Position Description'
+  } ]
+  @UI.fieldGroup: [{
+    qualifier: 'QuickViewData',
+    position: 40,
+    label: 'Description'
+  }]
+  PositionDesc;
+}

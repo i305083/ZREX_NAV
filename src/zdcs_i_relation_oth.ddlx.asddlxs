@@ -1,0 +1,59 @@
+@Metadata.layer: #CORE
+
+@UI.headerInfo: {
+  typeName: 'Relationship',
+  typeNamePlural: 'Relationship',
+  title: {
+    type: #STANDARD,
+    value: 'Relationship'
+  },
+  description: {
+    type: #STANDARD,
+    value: 'ObjectDesc'
+  },
+  typeImageUrl: 'sap-icon://biometric-thumb'
+}
+annotate entity ZDCS_I_RELATION_OTH with
+{
+  @UI.fieldGroup: [{
+   qualifier: 'QuickViewOTH',
+   position: 10,
+   label: 'Relationship'
+  }]
+
+  @UI.lineItem: [ {
+    position: 10 ,
+    label: 'Position ID'
+  } ]
+  @UI.selectionField: [ {
+    position: 10
+  } ]
+  Relationship;
+
+  @UI.lineItem: [ {
+    position: 20 ,
+    label: 'RelatedObjectId'
+  } ]
+  @UI.selectionField: [ {
+    position: 20
+  } ]
+  @UI.fieldGroup: [{
+    qualifier: 'QuickViewOTH',
+    position: 20,
+    label: 'RelatedObjectId'
+  }]
+  RelatedObjectId;
+  @UI.lineItem: [ {
+  position: 30 ,
+  label: 'RelatedObjectId'
+  } ]
+  @UI.selectionField: [ {
+    position: 30
+  } ]
+  @UI.fieldGroup: [{
+    qualifier: 'QuickViewOTH',
+    position: 30,
+    label: 'ObjectDesc'
+  }]
+  ObjectDesc;
+}

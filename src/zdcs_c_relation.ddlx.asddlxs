@@ -1,0 +1,118 @@
+@Metadata.layer: #CORE
+@UI: {
+  headerInfo: {
+    typeName: 'Relationship',
+    typeNamePlural: 'Relationships',
+    title: {
+      type: #STANDARD,
+      value: 'PositionNumber'
+    },
+    description: {
+      type: #STANDARD,
+      value: 'ObjectName'
+    }
+  },
+  presentationVariant: [{
+    sortOrder: [{
+      by: 'PositionNumber',
+      direction: #ASC
+    }],
+    visualizations: [{
+      type: #AS_LINEITEM
+    }]
+  }]
+}
+annotate view ZDCS_C_RELATION with
+{
+  @UI.facet: [
+    {
+      id: 'idGeneralInfo',
+      purpose: #STANDARD,
+      type: #IDENTIFICATION_REFERENCE,
+      label: 'General Information',
+      position: 10
+    },
+    // Search Term #NavigationSection
+    {
+      purpose: #STANDARD,
+      position: 20,
+      type: #FIELDGROUP_REFERENCE,
+      targetElement: '_Navigation',
+      targetQualifier: 'QuickViewData',
+      label: 'Navigation with Position'
+    },
+    // Search Term #NavigationSection
+    {
+      purpose: #STANDARD,
+      position: 30,
+      type: #FIELDGROUP_REFERENCE,
+      targetElement: '_NavigationOther',
+      targetQualifier: 'QuickViewOTH',
+      label: 'Navigate with Relationship'
+    }
+  ]
+
+  @UI.lineItem: [{
+    position: 10,
+    importance: #HIGH,
+    label: 'Position',
+      type: #WITH_INTENT_BASED_NAVIGATION,
+      semanticObjectAction: 'display'
+  } ]
+ 
+  @UI.identification: [{
+    position: 10,
+    label: 'Position Number'
+  }]
+  @UI.selectionField: [{ position: 10 }]
+  @UI.textArrangement: #TEXT_FIRST
+  PositionNumber; 
+  
+ @UI.lineItem: [{
+    position: 20,
+    importance: #HIGH,
+    label: 'RelatedObjectID' ,
+      type: #WITH_INTENT_BASED_NAVIGATION,
+      semanticObjectAction: 'display'
+  }]
+  @UI.identification: [{ position: 20 }]
+  @UI.selectionField: [{ position: 20 }] 
+  Relationship;
+
+ @UI.lineItem: [{
+    position: 30,
+    importance: #HIGH,
+    label: 'RelatedObjectID'
+  }]
+  @UI.identification: [{ position: 30 }]
+  RelatedObjectID;
+
+ @UI.lineItem: [{
+    position: 40,
+    importance: #HIGH,
+    label: 'RelatedObjectID',
+      type: #WITH_INTENT_BASED_NAVIGATION,
+      semanticObjectAction: 'display'
+  }]
+  @UI.identification: [{ position: 40 }]
+  ObjectName;
+
+  @UI.lineItem: [{ position: 50 }]
+  @UI.identification: [{ position: 50 }]
+  ObjectRelate;
+
+  @UI.hidden: true
+  CreatedBy;
+
+  @UI.hidden: true
+  CreatedAt;
+
+  @UI.hidden: true
+  LastChangedBy;
+
+  @UI.hidden: true
+  LastChangedAt;
+
+  @UI.hidden: true
+  LocalLastChangedAt;
+}
